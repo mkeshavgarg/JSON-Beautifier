@@ -1,50 +1,59 @@
 body {
-	padding: 0;
+	background-color: #eeeeee;
+	color: #99999a;
+	font-family: Raleway, 'Open Sans', sans-serif;
 	margin: 0;
-}
-.container {
-	padding: 20px;
+	width: 341px;
 }
 
 .header {
 	background-color: steelblue;
-	color: blue;
-	font-size: 20px;
+	box-shadow: 0 1px 6px 1px #aaa;
+	color: white;
+	font-weight: bold;
 	padding: 10px;
+	text-align: center;
 }
-.message {
-	background-color: grey;
-	padding: 5px;
+.title {
 	font-size: 16px;
-	height: 26px;
-	width: 100%;
 }
+.info {
+	font-size: 12px;
+	font-style: italic;
+	margin-top: 5px;
+}
+
 .text-container {
-	margin: 20px 0 20px 0;
+	margin-top: 20px;
 }
 .textarea {
 	height: 300px;
+	margin: 0 20px;
 	width: 300px;
+}
+button:hover {
+	cursor: pointer;
+}
+.textarea:focus, button:focus {
+	outline: 0;
+}
+button:active {
+	background-color: lightblue;
 }
 
 .footer {
-	background-color: steelblue;
+	padding: 20px;
+	text-align: center;
+}
+
+
+.validate, .format, .format-with-color {
+  background-color: steelblue;
+	border: 0;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
 	padding: 10px;
-}
-
-.validate {
-	border-radius: 5px;
-	color: green;
-	float: left;
-	height: 30px;
-	margin-right: 20px;
-
-}
-
-.format, .format-with-color {
-	border-radius: 5px;
-	color: green;
-	height: 30px;
 }
 
 pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }

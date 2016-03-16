@@ -29,7 +29,6 @@
 			try {
 					var jsonString = jsonString.replace((/([\w]+)(:)/g), "\"$1\"$2");
 					var jsonString = jsonString.replace((/'/g), "\"");
-					alert(jsonString);
 					var json = JSON.parse(jsonString);
 
 					message = 'JSON is valid';
@@ -46,7 +45,7 @@
 		},
 		jsonWithColors: function (self, json) {
 			json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-			json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, 
+			json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
 				function (match) {
 					var cls = 'number';
 					if (/^"/.test(match)) {
@@ -68,7 +67,7 @@
 			document.getElementsByClassName('message')[0].appendChild(document.createElement('pre')).innerHTML = inp;
 		}
 	}
-	
+
 jf.init();
 
 })()
