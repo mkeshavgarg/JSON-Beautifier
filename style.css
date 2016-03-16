@@ -22,7 +22,6 @@ body {
 	font-style: italic;
 	margin-top: 5px;
 }
-
 .text-container {
 	margin-top: 20px;
 }
@@ -30,6 +29,11 @@ body {
 	height: 300px;
 	margin: 0 20px;
 	width: 300px;
+}
+.result-json {
+		height: 0;
+		margin: 0 20px;
+		width: 300px;
 }
 button:hover {
 	cursor: pointer;
