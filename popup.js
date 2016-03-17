@@ -81,9 +81,15 @@ _gaq.push(['_trackPageview']);
 			self.printJson(json);
 		},
 		printJson: function (json) {
-			$('.textarea').animate({height: '19px'}, 1000);
-			document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = json;
-			$('.result-json, pre').animate({height: '281px'}, 1000);
+			$('.textarea').animate({height: '20px'}, 1000, function() {
+                if (!document.getElementsByTagName('pre').length) {
+                    document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = json;
+                    $('pre').animate({height: '258px'}, 1000);
+                } else {
+                    document.getElementsByTagName('pre')[0].innerHTML = json;
+                }
+            });
+			
 		}
 	}
 
