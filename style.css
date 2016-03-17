@@ -3,7 +3,7 @@ body {
 	color: #99999a;
 	font-family: Raleway, 'Open Sans', sans-serif;
 	margin: 0;
-	width: 341px;
+	width: 320px;
 }
 
 .header {
@@ -27,7 +27,7 @@ body {
 }
 .textarea {
 	height: 300px;
-	margin: 0 20px;
+	margin: 0 10px;
 	width: 300px;
 }
 .result-json {
@@ -65,18 +65,19 @@ pre {
 	font-size: 12px;
 	outline: 1px solid #ccc; 
 	padding: 5px; 
+	word-wrap: break-word;
 }
 .string { 
 	color: green; 
 }
 .number { 
-	color: darkorange; 
+	color: orange; 
 }
 .boolean { 
 	color: blue; 
 }
 .null { 
-	color: magenta; 
+	color: green; 
 }
 .key { 
 	color: red; 

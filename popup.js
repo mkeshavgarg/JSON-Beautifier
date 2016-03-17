@@ -1,6 +1,6 @@
 
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+_gaq.push(['_setAccount', 'UA-75247077-1']);
 _gaq.push(['_trackPageview']);
 
 (function() {
@@ -8,8 +8,6 @@ _gaq.push(['_trackPageview']);
   ga.src = 'https://ssl.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-
-
 
 (function(){
 
@@ -34,8 +32,8 @@ _gaq.push(['_trackPageview']);
 		stringToJson: function(jsonString) {
 			var json;
 			try {
-					var jsonString = jsonString.replace((/([\w]+)(:)/g), "\"$1\"$2");
-					var jsonString = jsonString.replace((/'/g), "\"");
+					var jsonString = jsonString.replace(/([\w]+)(\s*:[^\/])/g, "\"$1\"$2");
+					var jsonString = jsonString.replace(/'/g, "\"");
 					json = JSON.parse(jsonString);
 				}
 			catch(error) {
@@ -62,7 +60,6 @@ _gaq.push(['_trackPageview']);
 			}
 			json = JSON.stringify(json, null, 4);
 			json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-			
 			json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
 				function (match) {
 					
@@ -83,9 +80,9 @@ _gaq.push(['_trackPageview']);
 			
 			self.printJson(json);
 		},
-		printJson: function (inp) {
+		printJson: function (json) {
 			$('.textarea').animate({height: '19px'}, 1000);
-			document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = inp;
+			document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = json;
 			$('.result-json, pre').animate({height: '281px'}, 1000);
 		}
 	}
