@@ -12,7 +12,7 @@
 
 			 document.getElementsByClassName('format-with-color')[0].addEventListener('click', function() {
 				json = self.getJson();
-				self.jsonWithColors(json);
+				self.jsonWithColors(self, json);
 			})
 		},
 		getJson: function() {
@@ -43,16 +43,17 @@
 			self.printJson(json);
 		},
 		jsonWithColors: function (self, json) {
-			var json = stringToJson(json);
+			var json = self.stringToJson(json);
 			if(!json) {
 				alert('JSON is not valid');
 				return;
 			}
 			json = JSON.stringify(json, null, 4);
-
 			json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+			alert('hi thereee');
 			json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
 				function (match) {
+					
 					var cls = 'number';
 					if (/^"/.test(match)) {
 						if (/:$/.test(match)) {
@@ -67,12 +68,14 @@
 					}
 					return '<span class="' + cls + '">' + match + '</span>';
 				});
-				alert('replace json', json);
+			alert('hi there');
+			
 			self.printJson(json);
 		},
 		printJson: function (inp) {
-			$('.textarea').fadeOut();
+			$('.textarea').animate({height: '19px'}, 1000);
 			document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = inp;
+			$('.result-json, pre').animate({height: '270px'}, 1000);
 		}
 	}
 
