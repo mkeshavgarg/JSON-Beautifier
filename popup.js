@@ -1,4 +1,16 @@
 
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+
+
 (function(){
 
 	var jf = {
@@ -50,7 +62,7 @@
 			}
 			json = JSON.stringify(json, null, 4);
 			json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-			alert('hi thereee');
+			
 			json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
 				function (match) {
 					
@@ -68,14 +80,13 @@
 					}
 					return '<span class="' + cls + '">' + match + '</span>';
 				});
-			alert('hi there');
 			
 			self.printJson(json);
 		},
 		printJson: function (inp) {
 			$('.textarea').animate({height: '19px'}, 1000);
 			document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = inp;
-			$('.result-json, pre').animate({height: '270px'}, 1000);
+			$('.result-json, pre').animate({height: '281px'}, 1000);
 		}
 	}
 
