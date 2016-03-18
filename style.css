@@ -31,8 +31,9 @@ body {
 	font-size: 11px;
 	height: 300px;
 	margin: 0 10px;
+	padding: 10px;
 	width: 300px;
-    transition: ease-in-out, background-color .35s ease-in-out;
+  transition: ease-in-out, background-color .35s ease-in-out;
 }
 .result-json {
 	height: 0;
@@ -78,22 +79,22 @@ pre {
 	background-color: white;
 	color: black;
 	font-size: 11px;
-	outline: 1px solid #ccc; 
-	padding: 5px; 
+	outline: 1px solid #ccc;
+	padding: 5px;
 	word-wrap: break-word;
 }
-.string { 
-	color: green; 
+.string {
+	color: green;
 }
-.number { 
-	color: orange; 
+.number {
+	color: orange;
 }
-.boolean { 
-	color: blue; 
+.boolean {
+	color: blue;
 }
-.null { 
-	color: lightblue; 
+.null {
+	color: lightblue;
 }
-.key { 
-	color: red; 
+.key {
+	color: red;
 }

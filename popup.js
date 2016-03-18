@@ -55,7 +55,7 @@
 			json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 			json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
 				function (match) {
-					
+
 					var cls = 'number';
 					if (/^"/.test(match)) {
 						if (/:$/.test(match)) {
@@ -70,21 +70,21 @@
 					}
 					return '<span class="' + cls + '">' + match + '</span>';
 				});
-			
+
 			self.printJson(json);
 		},
 		printJson: function (json) {
-			$('.textarea').attr({disabled: true}).animate({fontSize: '10px', height: '20px'}, 1000);
+			$('.textarea').attr({disabled: true}).animate({height: '50px'}, 1000);
 			if (!document.getElementsByTagName('pre').length) {
                     document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = json;
-                    $('.result-json').animate({height: '258px'}, 1000);
+                    $('.result-json').animate({height: '228px'}, 1000);
             } else {
                 document.getElementsByTagName('pre')[0].innerHTML = json;
             }
             document.getElementsByClassName('edit')[0].disabled = false;
 		},
 		editJson: function() {
-			
+
 			$('.result-json').animate({height: 0}, 1000, function() {
 				$(this).find('pre').remove();
 			});
