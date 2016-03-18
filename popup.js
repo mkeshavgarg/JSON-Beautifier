@@ -77,7 +77,7 @@
 			$('.textarea').attr({disabled: true}).animate({fontSize: '10px', height: '20px'}, 1000);
 			if (!document.getElementsByTagName('pre').length) {
                     document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = json;
-                    $('pre').animate({height: '258px'}, 1000);
+                    $('.result-json').animate({height: '258px'}, 1000);
             } else {
                 document.getElementsByTagName('pre')[0].innerHTML = json;
             }
@@ -85,11 +85,11 @@
 		},
 		editJson: function() {
 			
-			$('pre').animate({height: 0}, 1000, function() {
-				$(this).remove();
+			$('.result-json').animate({height: 0}, 1000, function() {
+				$(this).find('pre').remove();
 			});
 
-			$('.textarea').attr({disabled: false}).css( "fontSize", "14px" ).animate({height: '300px'}, 1000, function() {
+			$('.textarea').attr({disabled: false}).css( "fontSize", "11px" ).animate({height: '300px'}, 1000, function() {
 				document.getElementsByClassName('edit')[0].disabled = true;
 			});
 

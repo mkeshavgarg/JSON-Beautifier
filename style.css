@@ -28,6 +28,7 @@ body {
 	overflow: hidden;
 }
 .textarea {
+	font-size: 11px;
 	height: 300px;
 	margin: 0 10px;
 	width: 300px;
@@ -70,10 +71,13 @@ button:active {
 .edit, .format {
 	margin-right: 10px;
 }
+.result-json {
+	overflow-y: auto;
+}
 pre {
 	background-color: white;
 	color: black;
-	font-size: 12px;
+	font-size: 11px;
 	outline: 1px solid #ccc; 
 	padding: 5px; 
 	word-wrap: break-word;

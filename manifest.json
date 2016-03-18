@@ -2,13 +2,13 @@
 	"manifest_version": 2,
 	"name": "JSON Beautifier",
 
-	"description": "validate and Beautify your JSON",
-	"version": "0.1",
+	"description": "Validate and Beautify JSON",
+	"version": "1.0.0",
 
 	"browser_action": {
-      "default_icon": "icon.png",
+     
       "default_popup": "popup.html",
-      "default_title": "Format"
+      "default_title": "JSON Beautify"
    },
    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
