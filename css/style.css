@@ -41,7 +41,8 @@ body {
 	cursor: pointer;
 }
 .message {
-	background-color: mistyrose;
+	background-color: lightgrey;
+	color: Red;
     height: 48px;
     display: block;
     font-size: 28px;
