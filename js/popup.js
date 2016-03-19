@@ -13,10 +13,14 @@
 				self.beautify(json);
 			})
 
-			 document.getElementsByClassName('beautify-with-color')[0].addEventListener('click', function() {
+			document.getElementsByClassName('beautify-with-color')[0].addEventListener('click', function() {
 				json = self.getJson();
 				self.beautifyWithColors(json);
 			})
+			document.querySelector('textarea').addEventListener('click', function() {
+				self.editJson();
+			})
+			
 		},
 		getJson: function() {
 			json = document.getElementsByClassName('textarea')[0].value;
@@ -40,7 +44,7 @@
 			var self = this;
 			var json = self.stringToJson(json);
 			if(!json) {
-				alert('JSON is not valid');
+				self.printError();
 				return;
 			}
 			json = JSON.stringify(json, null, 4);
@@ -50,7 +54,7 @@
 			var self = this;
 			var json = self.stringToJson(json);
 			if(!json) {
-				alert('JSON is not valid');
+				self.printError();
 				return;
 			}
 			json = JSON.stringify(json, null, 4);
@@ -76,7 +80,7 @@
 			self.printJson(json);
 		},
 		printJson: function (json) {
-			$('.textarea').attr({disabled: true}).animate({height: '50px'}, 1000);
+			$('.textarea').attr({readOnly: true}).animate({height: '50px'}, 1000);
 			if (!document.getElementsByTagName('pre').length) {
                     document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = json;
                     $('.result-json').animate({height: '238px'}, 1000);
@@ -86,15 +90,26 @@
             document.getElementsByClassName('edit')[0].disabled = false;
 		},
 		editJson: function() {
-
 			$('.result-json').animate({height: 0}, 1000, function() {
 				$(this).find('pre').remove();
 			});
 
-			$('.textarea').attr({disabled: false}).animate({height: '300px'}, 1000, function() {
+			$('.textarea').attr({readOnly: false}).animate({height: '300px'}, 1000, function() {
 				document.getElementsByClassName('edit')[0].disabled = true;
 			});
 
+		},
+		printError: function() {
+			var messageDiv = document.getElementsByClassName('message')[0];
+
+			messageDiv.innerHTML = 'JSON is not valid';
+
+			$('.message').animate({'marginLeft': '0'}, 500, function() {
+				setTimeout(function() {
+					$('.message').animate({'marginLeft': '600px'}, 500, function(){$('.message').css({'marginLeft': '-250px'});});
+				}, 500)
+				
+			});
 		}
 	}
 
