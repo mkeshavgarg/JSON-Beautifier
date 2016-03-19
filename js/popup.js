@@ -8,14 +8,14 @@
 				self.editJson();
 			})
 
-			document.getElementsByClassName('format')[0].addEventListener('click', function() {
+			document.getElementsByClassName('beautify')[0].addEventListener('click', function() {
 				json = self.getJson();
-				self.jsonWithNoColors(self, json);
+				self.beautify(json);
 			})
 
-			 document.getElementsByClassName('format-with-color')[0].addEventListener('click', function() {
+			 document.getElementsByClassName('beautify-with-color')[0].addEventListener('click', function() {
 				json = self.getJson();
-				self.jsonWithColors(self, json);
+				self.beautifyWithColors(json);
 			})
 		},
 		getJson: function() {
@@ -36,7 +36,8 @@
 				return json;
 			}
 		},
-		jsonWithNoColors: function(self, json) {
+		beautify: function(json) {
+			var self = this;
 			var json = self.stringToJson(json);
 			if(!json) {
 				alert('JSON is not valid');
@@ -45,7 +46,8 @@
 			json = JSON.stringify(json, null, 4);
 			self.printJson(json);
 		},
-		jsonWithColors: function (self, json) {
+		beautifyWithColors: function (json) {
+			var self = this;
 			var json = self.stringToJson(json);
 			if(!json) {
 				alert('JSON is not valid');
@@ -77,7 +79,7 @@
 			$('.textarea').attr({disabled: true}).animate({height: '50px'}, 1000);
 			if (!document.getElementsByTagName('pre').length) {
                     document.getElementsByClassName('result-json')[0].appendChild(document.createElement('pre')).innerHTML = json;
-                    $('.result-json').animate({height: '228px'}, 1000);
+                    $('.result-json').animate({height: '238px'}, 1000);
             } else {
                 document.getElementsByTagName('pre')[0].innerHTML = json;
             }
@@ -89,7 +91,7 @@
 				$(this).find('pre').remove();
 			});
 
-			$('.textarea').attr({disabled: false}).css( "fontSize", "11px" ).animate({height: '300px'}, 1000, function() {
+			$('.textarea').attr({disabled: false}).animate({height: '300px'}, 1000, function() {
 				document.getElementsByClassName('edit')[0].disabled = true;
 			});
 

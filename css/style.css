@@ -33,14 +33,10 @@ body {
 	margin: 0 10px;
 	padding: 10px;
 	width: 300px;
-  transition: ease-in-out, background-color .35s ease-in-out;
+    transition: ease-in-out, background-color .35s ease-in-out;
 }
-.result-json {
-	height: 0;
-	margin: 0 10px;
-	width: 300px;
-}
-.edit:hover, .format:hover, .format-with-color:hover {
+
+.edit:hover, .beautify:hover, .beautify-with-color:hover {
 	cursor: pointer;
 }
 button[disabled] {
@@ -61,7 +57,7 @@ button:active {
 	text-align: center;
 }
 
-.edit, .format, .format-with-color {
+.edit, .beautify, .beautify-with-color {
     background-color: steelblue;
 	border: 0;
 	border-radius: 5px;
@@ -69,11 +65,15 @@ button:active {
 	font-weight: bold;
 	padding: 10px;
 }
-.edit, .format {
+.edit, .beautify {
 	margin-right: 10px;
 }
+
 .result-json {
+	height: 0;
+	margin: 10px 10px 0 10px;
 	overflow-y: auto;
+	width: 300px;
 }
 pre {
 	background-color: white;
@@ -81,6 +81,8 @@ pre {
 	font-size: 11px;
 	outline: 1px solid #ccc;
 	padding: 5px;
+	margin: 0;
+	min-height: 50px;
 	word-wrap: break-word;
 }
 .string {
