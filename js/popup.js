@@ -17,6 +17,11 @@
 				json = self.getJson();
 				self.beautifyWithColors(json);
 			})
+
+			document.querySelector('.message-box .close').addEventListener('click', function() {
+				self.closeMessageBox();
+			})
+
 			document.querySelector('textarea').addEventListener('click', function() {
 				self.editJson();
 			})
@@ -93,23 +98,19 @@
 			$('.result-json').animate({height: 0}, 1000, function() {
 				$(this).find('pre').remove();
 			});
-
+			$('.message-box').css({'opacity': 0});
 			$('.textarea').attr({readOnly: false}).animate({height: '300px'}, 1000, function() {
 				document.getElementsByClassName('edit')[0].disabled = true;
 			});
 
 		},
 		printError: function() {
-			var messageDiv = document.getElementsByClassName('message')[0];
-
-			messageDiv.innerHTML = 'JSON is not valid';
-
-			$('.message').animate({'marginLeft': '0'}, 500, function() {
-				setTimeout(function() {
-					$('.message').animate({'marginLeft': '600px'}, 500, function(){$('.message').css({'marginLeft': '-250px'});});
-				}, 500)
-				
-			});
+			$('.textarea').attr({readOnly: true});		
+			$('.message-box').css({'opacity': 1});
+		},
+		closeMessageBox: function() {
+			$('.textarea').attr({readOnly: false});
+			$('.message-box').css({'opacity': 0});	
 		}
 	}
 

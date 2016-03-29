@@ -1,7 +1,6 @@
 body {
-	background-color: #eeeeee;
+	background-color: #eee;
 	color: #99999a;
-	font-family: Raleway, 'Open Sans', sans-serif;
 	margin: 0;
 	width: 320px;
 }
@@ -35,25 +34,43 @@ body {
 	margin: 0 10px;
 	padding: 10px;
 	width: 300px;
+	resize: none;
     transition: ease-in-out, background-color .35s ease-in-out;
 }
 .textarea[readOnly] {
 	cursor: pointer;
 }
-.message {
-	background-color: lightgrey;
-	color: Red;
-    height: 48px;
-    display: block;
-    font-size: 28px;
+.message-box {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    opacity: 0;
+    font-size: 20px;
     padding: 10px;	
-    width: 250px;
-    margin-left: -250px;
+    left: 20px;
+    width: 280px;
+    transition: opacity .35s ease;
     box-sizing: border-box;
     position: absolute;
-    top: 150px;
+    top: 185px;
 }
-
+.message-box .close {
+	background-color: transparent;
+	border: none;
+	color: #000;
+	opacity: .2;
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	font-size: 18px;
+}
+.message-box .close:hover {
+	cursor: pointer;
+	opacity: .5;
+}
+.message {
+	font-weight: 400;
+}
 .edit:hover, .beautify:hover, .beautify-with-color:hover {
 	cursor: pointer;
 }
