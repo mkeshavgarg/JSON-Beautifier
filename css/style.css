@@ -33,8 +33,7 @@ body {
 	height: 300px;
 	margin: 0 10px;
 	padding: 10px;
-	min-width: 300px;
-	width: auto;
+	width: 300px;
 	resize: none;
     transition: ease-in-out, background-color .35s ease-in-out;
 }
@@ -110,7 +109,10 @@ button:active {
 	height: 0;
 	margin: 10px 10px 0 10px;
 	overflow: auto;
-	width: auto;
+	width: 300px;
+}
+.result-json:focus {
+	outline: none;
 }
 pre {
 	color: black;
@@ -133,10 +135,4 @@ pre {
 }
 .key {
 	color: red;
-}
-.dragbar{
-    position: absolute;
-    left: 5px;
-    bottom: 10px;
-    background-color: #444;
 }
