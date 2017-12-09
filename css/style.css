@@ -1,0 +1,155 @@
+body {
+	background-color: #eee;
+	color: #99999a;
+	margin: 0;
+	width: 320px;
+}
+.container {
+	position: relative;
+	overflow: hidden;
+
+}
+.header {
+	background-color: steelblue;
+	box-shadow: 0 1px 6px 1px #aaa;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+	position: relative;
+	text-align: center;
+}
+img{
+	color: :white;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+body.expand{
+	width: 520px;
+}
+/*body.expand .text-container{
+	height: 400px;
+}*/
+.title {
+	font-size: 16px;
+}
+.info {
+	font-size: 12px;
+	font-style: italic;
+	margin-top: 5px;
+}
+.text-container {
+	height: 300px;
+	overflow: hidden;
+	margin: 10px 10px 0 10px;
+}
+.textarea {
+	font-size: 11px;
+	height: 100%;
+	margin: 0 10px;
+	padding: 10px;
+	width: 100%;
+	resize: none;
+    transition: ease-in-out, background-color .35s ease-in-out;
+}
+.textarea[readOnly] {
+	cursor: pointer;
+}
+.message-box {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    opacity: 0;
+    font-size: 20px;
+    padding: 10px;	
+    left: 20px;
+    width: 100%;
+    transition: opacity .35s ease;
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+}
+.message-box .close {
+	background-color: transparent;
+	border: none;
+	color: #000;
+	opacity: .2;
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	font-size: 18px;
+}
+.message-box .close:hover {
+	cursor: pointer;
+	opacity: .5;
+}
+.message {
+	font-weight: 400;
+}
+.edit:hover, .beautify:hover, .beautify-with-color:hover {
+	cursor: pointer;
+}
+button[disabled] {
+	background-color: lightgrey;
+}
+button[disabled]:hover {
+	cursor: default;
+}
+.textarea:focus, button:focus {
+	outline: 0;
+}
+button:active {
+	background-color: lightblue;
+}
+
+.footer {
+	padding: 20px 20px 17px 20px;
+	text-align: center;
+}
+
+.edit, .beautify, .beautify-with-color {
+    background-color: steelblue;
+	border: 0;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+}
+.edit, .beautify {
+	margin-right: 10px;
+}
+
+.result-json {
+	background-color: #fff;
+	height: 0;
+	margin: 10px 10px 0 10px;
+	overflow: auto;
+	width: 100%;
+}
+.result-json:focus {
+	outline: none;
+}
+pre {
+	color: black;
+	font-size: 11px;
+	padding: 5px;
+	margin: 0;
+	min-height: 50px;
+	height: 100%;
+}
+.string {
+	color: green;
+}
+.number {
+	color: orange;
+}
+.boolean {
+	color: blue;
+}
+.null {
+	color: lightblue;
+}
+.key {
+	color: red;
+}

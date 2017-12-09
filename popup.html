@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>JB</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class = 'container'>
+            <header class = 'header'>
+              <div class="title">JSON Beautifier</div>
+              <div class="info"> Give your JSONs a better look! </div>
+              <img src="max.png" width="15" height="15"/>
+            </header>
+            <div class = 'text-container'>
+                <textarea class = 'textarea'></textarea>
+                <div contenteditable="true" class='result-json'></div>
+            </div>
+            <div class='message-box'>
+                <button class='close'>&#10006;</button>
+                <div class='message'>Input JSON is not valid</div>
+            </div> 
+            <footer class = 'footer'>
+                <button class = 'edit' disabled>Edit</button>
+                <button class = 'beautify'>Beautify</button>
+                <button class = 'beautify-with-color'>Beautify (Colors)</button>
+            </footer>
+        </div>
+        <script type="text/javascript" src='js/ga.js'></script>
+        <script type="text/javascript" src='js/jquery.js'></script>
+        <script type="text/javascript" src='js/popup.js'></script>
+    </body>
+</html>
