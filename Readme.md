@@ -8,7 +8,3 @@ For validation: It will also alert you with error in case your JSON is not valid
 
 ### Bugs and Issues
 Have a bug or an issue with this ? [Open a new Issue](https://github.com/mkeshavgarg/JSON-Beautifier/issues)
-
-
-
-
