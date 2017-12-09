@@ -47,7 +47,7 @@ body.expand{
 .textarea {
 	font-size: 11px;
 	height: 100%;
-	margin: 0 10px;
+	/*margin: 0 10px;*/
 	padding: 10px;
 	width: 100%;
 	resize: none;
@@ -58,19 +58,21 @@ body.expand{
 }
 .message-box {
     color: #a94442;
-    background-color: #f2dede;
-    border: 1px solid #ebccd1;
+    /*background-color: #f2dede;
+    border: 1px solid #ebccd1;*/
     opacity: 0;
     font-size: 20px;
     padding: 10px;	
-    left: 20px;
+    /*left: 20px;*/
     width: 100%;
     transition: opacity .35s ease;
     box-sizing: border-box;
     position: absolute;
-    top: 100%;
+    text-align: center;
+    top: 200px;
 }
 .message-box .close {
+	display: none;
 	background-color: transparent;
 	border: none;
 	color: #000;
